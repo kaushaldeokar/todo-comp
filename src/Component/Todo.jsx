@@ -52,7 +52,7 @@ const Todo = () => {
                                 <CustomCheckBox Task={e} />
                                 <div className="btn" id={i}>
                                         {
-                                             isShown && <Button variant="contained" color="success" onClick={() => del(i)} >X</Button>
+                                            k===i && isShown && <Button variant="contained" color="success" onClick={() => del(i)} >X</Button>
                                         }
                                     
                                     </div>
