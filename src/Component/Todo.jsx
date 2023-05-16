@@ -9,6 +9,17 @@ const Todo = () => {
     const [val, setVal] = useState("");
     const [arr, Setarr] = useState([]);
     const [isShown, setIsShown] = useState(false);
+    const [k, setk] = useState(-1);
+
+    const enter=(idx)=>{
+        setk(idx);
+        setIsShown(true);
+    }
+
+    const leave=()=>{
+        setk(-1);
+        setIsShown(false)
+    }
 
     const addVal = () => {
         Setarr([...arr, val]);
@@ -35,13 +46,13 @@ const Todo = () => {
                 {
                     arr.map((e, i) => {
                         return (
-                            <div style={{ display: 'flex', flexDirection: "row" }} id={i} key={i} onMouseEnter={() => setIsShown(true)}
-                            onMouseLeave={() => setIsShown(false)}>
+                            <div style={{ display: 'flex', flexDirection: "row" }} id={i} key={i} onMouseEnter={() => enter(i)}
+                            onMouseLeave={() => leave} >
 
                                 <CustomCheckBox Task={e} />
-                                <div className="btn" >
+                                <div className="btn" id={i}>
                                         {
-                                            isShown && <Button variant="contained" color="success" onClick={() => del(i)} >X</Button>
+                                             isShown && <Button variant="contained" color="success" onClick={() => del(i)} >X</Button>
                                         }
                                     
                                     </div>
