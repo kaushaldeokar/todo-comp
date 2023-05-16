@@ -16,8 +16,9 @@ const Todo = () => {
 
     const del = (idx) => {
         let red = [...arr];
-        console.log(red);
-        red.splice(idx);
+        console.log("Before", red);
+        red.splice(idx,1);
+        console.log("After", red);
         Setarr(red);
 
     }
