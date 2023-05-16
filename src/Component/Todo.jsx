@@ -46,8 +46,8 @@ const Todo = () => {
                 {
                     arr.map((e, i) => {
                         return (
-                            <div style={{ display: 'flex', flexDirection: "row" }} id={i} key={i} onMouseEnter={() => enter(i)}
-                            onMouseLeave={() => leave} >
+                            <div style={{ display: 'flex', flexDirection: "row" }} id={i} key={i} onMouseOver={() => enter(i)}
+                            onMouseOut={() => leave} >
 
                                 <CustomCheckBox Task={e} />
                                 <div className="btn" id={i}>
